@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '2048':
+        specifier: git://github.com/Maus3rSR/Challenge_2048
+        version: 2048-return@https://codeload.github.com/Maus3rSR/Challenge_2048/tar.gz/ee0fad7056e58bdcbbea9c6d3e51f836f6122c06
       '@nestjs/common':
         specifier: ^10.0.0
         version: 10.4.18(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -89,6 +92,10 @@ importers:
         version: 5.8.3
 
 packages:
+
+  2048-return@https://codeload.github.com/Maus3rSR/Challenge_2048/tar.gz/ee0fad7056e58bdcbbea9c6d3e51f836f6122c06:
+    resolution: {tarball: https://codeload.github.com/Maus3rSR/Challenge_2048/tar.gz/ee0fad7056e58bdcbbea9c6d3e51f836f6122c06}
+    version: 1.0.0
 
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
@@ -2829,6 +2836,11 @@ packages:
     engines: {node: '>=10'}
 
 snapshots:
+
+  2048-return@https://codeload.github.com/Maus3rSR/Challenge_2048/tar.gz/ee0fad7056e58bdcbbea9c6d3e51f836f6122c06:
+    dependencies:
+      '@types/node': 20.17.51
+      prettier: 3.5.3
 
   '@ampproject/remapping@2.3.0':
     dependencies:
