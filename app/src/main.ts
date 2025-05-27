@@ -1,24 +1,14 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import "./assets/app.css";
+import "./assets/2048.css";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+import { setupGrid } from "./2048Grid.ts";
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+const grid = setupGrid(document.querySelector<HTMLDivElement>(".grid")!);
+
+// test
+grid.update([
+  [null, null, 4, null],
+  [null, null, 8, null],
+  [null, null, 64, 8],
+  [2, 8, 2, 8],
+]);
