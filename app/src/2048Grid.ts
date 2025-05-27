@@ -7,7 +7,7 @@ const emptyGrid: Grid2048 = Array.from({ length: 4 }, () =>
 export function setupGrid(gridElement: HTMLDivElement) {
   const gridSize = 4;
 
-  const setGrid = (grid: Grid2048) => {
+  const display = (grid: Grid2048) => {
     const cells = gridElement.querySelectorAll(".grid_cell");
     cells.forEach((cell, index) => {
       const row = index % gridSize;
@@ -20,10 +20,10 @@ export function setupGrid(gridElement: HTMLDivElement) {
     });
   };
 
-  setGrid(emptyGrid);
+  display(emptyGrid);
 
   return {
-    update: setGrid,
+    display,
   };
 }
 
