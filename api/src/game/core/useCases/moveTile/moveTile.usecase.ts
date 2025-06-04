@@ -1,3 +1,4 @@
+import { Inject } from '@nestjs/common';
 import { Game2048Repository } from '../../ports/game2048.repository';
 
 export type Direction = 'UP' | 'LEFT' | 'RIGHT' | 'DOWN';
@@ -5,9 +6,12 @@ export type TileValue = number | null;
 export type Grid = TileValue[][];
 
 export class MoveTile {
-  constructor(private readonly gameRepository: Game2048Repository) {}
+  constructor(
+    @Inject()
+    private readonly gameRepository: Game2048Repository,
+  ) {}
 
-  toDirection(direction: Direction) {
+  toDirection(direction: Direction): Grid {
     const grid = this.gameRepository.fetch();
 
     const iterationDirection = Array.from<Direction>(['UP', 'LEFT']).includes(
@@ -55,5 +59,6 @@ export class MoveTile {
     }
 
     this.gameRepository.save(grid);
+    return grid;
   }
 }
